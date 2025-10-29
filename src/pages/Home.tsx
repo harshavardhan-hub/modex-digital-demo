@@ -12,7 +12,7 @@ import Support from '@/components/home/Support';
 
 const Home: React.FC = () => {
   return (
-    <>
+    <div style={{ width: '100%', overflowX: 'hidden' }}>
       <Hero />
       <ServiceSnapshot />
       <Solutions />
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <CaseStudies />
       <Testimonials />
       <Support />
-    </>
+    </div>
   );
 };
 

@@ -10,15 +10,16 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const location = useLocation();
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" style={{ width: '100%', overflowX: 'hidden' }}>
       <Header />
-      <main className="flex-grow pt-16">{children}</main>
+      <main className="flex-grow pt-16" style={{ width: '100%', overflowX: 'hidden' }}>
+        {children}
+      </main>
       <Footer />
     </div>
   );
