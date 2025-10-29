@@ -1,0 +1,71 @@
+modex-digital/
+├── public/
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── og-image.png
+├── src/
+│   ├── api/
+│   │   └── contact.ts
+│   ├── assets/
+│   │   └── images/
+│   │       └── .gitkeep
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Button.tsx
+│   │   │   ├── Card.tsx
+│   │   │   └── Container.tsx
+│   │   ├── layout/
+│   │   │   ├── Header.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   └── Layout.tsx
+│   │   ├── home/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── ServiceSnapshot.tsx
+│   │   │   ├── Solutions.tsx
+│   │   │   ├── ProductTeaser.tsx
+│   │   │   ├── WhatWeDo.tsx
+│   │   │   ├── Automation.tsx
+│   │   │   ├── Stats.tsx
+│   │   │   ├── CaseStudies.tsx
+│   │   │   ├── Testimonials.tsx
+│   │   │   └── Support.tsx
+│   │   ├── forms/
+│   │   │   └── ContactForm.tsx
+│   │   └── seo/
+│   │       └── SEO.tsx
+│   ├── pages/
+│   │   ├── Home.tsx
+│   │   ├── Services.tsx
+│   │   ├── ServiceDetail.tsx
+│   │   ├── Product.tsx
+│   │   ├── Clients.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Support.tsx
+│   │   ├── Privacy.tsx
+│   │   └── Terms.tsx
+│   ├── hooks/
+│   │   ├── useInView.ts
+│   │   ├── useReducedMotion.ts
+│   │   └── useScrollPosition.ts
+│   ├── utils/
+│   │   ├── animations.ts
+│   │   └── constants.ts
+│   ├── styles/
+│   │   └── index.css
+│   ├── App.tsx
+│   ├── main.tsx
+│   └── vite-env.d.ts
+├── api/
+│   └── contact.ts
+├── .env.example
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── postcss.config.js
+├── tailwind.config.js
+├── tsconfig.json
+├── tsconfig.node.json
+├── vite.config.ts
+├── vercel.json
+└── README.md
