@@ -22,7 +22,7 @@ const Support: React.FC = () => {
   return (
     <section ref={ref} className="section-padding bg-primary text-white">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial="hidden"
@@ -30,11 +30,13 @@ const Support: React.FC = () => {
             variants={fadeInUp}
           >
             <div className="flex items-center space-x-3 mb-6">
-              <Headphones className="w-12 h-12 text-accent" />
-              <h2 className="heading-2 text-white">24/7 Support</h2>
+              <Headphones className="w-10 h-10 sm:w-12 sm:h-12 text-accent" />
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-white">
+                24/7 Support
+              </h2>
             </div>
 
-            <p className="text-xl text-neutral-300 mb-8">
+            <p className="text-lg sm:text-xl text-neutral-300 mb-8">
               We're here to help you succeed. Get in touch anytime, and we'll respond
               within 24 hours.
             </p>
@@ -44,7 +46,7 @@ const Support: React.FC = () => {
                 href={`tel:${SITE_CONFIG.phone}`}
                 className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
               >
-                <Phone className="w-6 h-6 text-accent" />
+                <Phone className="w-6 h-6 text-accent flex-shrink-0" />
                 <div>
                   <div className="text-sm text-neutral-400">Call Us</div>
                   <div className="font-semibold">{SITE_CONFIG.phone}</div>
@@ -55,10 +57,10 @@ const Support: React.FC = () => {
                 href={`mailto:${SITE_CONFIG.email}`}
                 className="flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
               >
-                <Mail className="w-6 h-6 text-accent" />
+                <Mail className="w-6 h-6 text-accent flex-shrink-0" />
                 <div>
                   <div className="text-sm text-neutral-400">Email Us</div>
-                  <div className="font-semibold">{SITE_CONFIG.email}</div>
+                  <div className="font-semibold break-all">{SITE_CONFIG.email}</div>
                 </div>
               </a>
 
@@ -66,7 +68,7 @@ const Support: React.FC = () => {
                 onClick={handleWhatsApp}
                 className="w-full flex items-center space-x-4 p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-all"
               >
-                <MessageCircle className="w-6 h-6 text-accent" />
+                <MessageCircle className="w-6 h-6 text-accent flex-shrink-0" />
                 <div className="text-left">
                   <div className="text-sm text-neutral-400">WhatsApp</div>
                   <div className="font-semibold">Chat with us instantly</div>
@@ -79,18 +81,18 @@ const Support: React.FC = () => {
               to="/contact"
               variant="primary"
               size="lg"
-              className="w-full md:w-auto"
+              className="w-full sm:w-auto"
             >
               Open a Ticket
             </Button>
           </motion.div>
 
-          {/* Right Illustration */}
+          {/* Right Illustration - HIDDEN ON MOBILE */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ delay: 0.2 }}
-            className="relative"
+            className="relative hidden lg:block"
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
               <img
