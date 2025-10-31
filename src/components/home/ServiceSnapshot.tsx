@@ -5,10 +5,13 @@ import { staggerContainer, staggerItem } from '@/utils/animations';
 import { SERVICES } from '@/utils/constants';
 import Card from '@/components/common/Card';
 import Container from '@/components/common/Container';
+import Button from '@/components/common/Button';
 import { Link } from 'react-router-dom';
+
 
 const ServiceSnapshot: React.FC = () => {
   const [ref, isInView] = useInView();
+
 
   return (
     <section ref={ref} className="section-padding bg-neutral-100">
@@ -27,6 +30,7 @@ const ServiceSnapshot: React.FC = () => {
           </motion.p>
         </motion.div>
 
+
         <motion.div
           variants={staggerContainer}
           initial="hidden"
@@ -35,17 +39,20 @@ const ServiceSnapshot: React.FC = () => {
         >
           {SERVICES.map((service) => (
             <motion.div key={service.id} variants={staggerItem}>
-              <Link to={`/services/${service.id}`}>
-                <Card className="h-full">
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-xl font-semibold mb-2 text-primary">
-                    {service.title}
-                  </h3>
-                  <p className="text-neutral-500 text-sm">
-                    {service.shortDescription}
-                  </p>
-                </Card>
-              </Link>
+              <Card className="h-full flex flex-col">
+                <div className="text-4xl mb-4">{service.icon}</div>
+                <h3 className="text-xl font-semibold mb-2 text-primary">
+                  {service.title}
+                </h3>
+                <p className="text-neutral-500 text-sm flex-grow">
+                  {service.shortDescription}
+                </p>
+                <Link to={`/services/${service.id}`} className="mt-4">
+                  <Button variant="primary" className="w-full">
+                    Read More
+                  </Button>
+                </Link>
+              </Card>
             </motion.div>
           ))}
         </motion.div>
@@ -53,5 +60,6 @@ const ServiceSnapshot: React.FC = () => {
     </section>
   );
 };
+
 
 export default ServiceSnapshot;

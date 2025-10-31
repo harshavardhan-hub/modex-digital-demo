@@ -10,6 +10,10 @@ modex-digital/
 │   │   └── images/
 │   │       └── .gitkeep
 │   ├── components/
+│   │   ├── chatbot/                    
+│   │   │   ├── Chatbot.tsx            
+│   │   │   ├── ChatMessage.tsx         
+│   │   │   └── TypingIndicator.tsx   
 │   │   ├── common/
 │   │   │   ├── Button.tsx
 │   │   │   ├── Card.tsx
@@ -28,13 +32,13 @@ modex-digital/
 │   │   │   ├── Stats.tsx
 │   │   │   ├── CaseStudies.tsx
 │   │   │   ├── Testimonials.tsx
-│   │   │   └── Support.tsx
+│   │   │   ├── Support.tsx
 │   │   ├── forms/
 │   │   │   └── ContactForm.tsx
 │   │   └── seo/
 │   │       └── SEO.tsx
 │   ├── pages/
-│   │   ├── Home.tsx
+│   │   ├── Home.tsx                    
 │   │   ├── Services.tsx
 │   │   ├── ServiceDetail.tsx
 │   │   ├── Product.tsx
@@ -43,6 +47,10 @@ modex-digital/
 │   │   ├── Support.tsx
 │   │   ├── Privacy.tsx
 │   │   └── Terms.tsx
+│   ├── services/                      
+│   │   └── gemini.ts                  
+│   ├── types/                          
+│   │   └── chatbot.ts                  
 │   ├── hooks/
 │   │   ├── useInView.ts
 │   │   ├── useReducedMotion.ts
@@ -52,12 +60,13 @@ modex-digital/
 │   │   └── constants.ts
 │   ├── styles/
 │   │   └── index.css
-│   ├── App.tsx
+│   ├── App.tsx                         
 │   ├── main.tsx
 │   └── vite-env.d.ts
 ├── api/
 │   └── contact.ts
-├── .env.example
+├── .env                               
+├── .env.example                       
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html

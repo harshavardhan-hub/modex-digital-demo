@@ -20,7 +20,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} />
-            <Route path="/services/:slug" element={<ServiceDetail />} />
+            <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/product" element={<Product />} />
             <Route path="/clients" element={<Clients />} />
             <Route path="/contact" element={<Contact />} />
@@ -29,7 +29,7 @@ function App() {
             <Route path="/terms" element={<Terms />} />
           </Routes>
         </Layout>
-        <Chatbot /> {/* 👈 ADD THIS - Shows on all pages */}
+        <Chatbot />
       </Router>
     </MotionConfig>
   );

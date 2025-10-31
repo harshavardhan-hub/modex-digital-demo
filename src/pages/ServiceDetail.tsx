@@ -38,7 +38,7 @@ const ServiceDetail: React.FC = () => {
 
           <motion.div initial="hidden" animate="visible" variants={fadeInUp}>
             <div className="text-6xl mb-6">{service.icon}</div>
-            <h1 className="heading-1 mb-6">{service.title}</h1>
+            <h1 className="heading-1 mb-6 text-white">{service.title}</h1>
             <p className="text-xl text-neutral-300 max-w-3xl">
               {service.description}
             </p>
