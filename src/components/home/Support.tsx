@@ -96,9 +96,9 @@ const Support: React.FC = () => {
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
               <img
-                src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop"
+                src="https://res.cloudinary.com/drit9nkha/image/upload/v1761924567/Gemini_Generated_Image_s05ksns05ksns05k_dnsc2c.png"
                 alt="24/7 Customer Support"
-                className="w-full h-auto"
+                className="w-full h-auto max-w-2xl mx-auto object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent2/20 mix-blend-overlay"></div>
             </div>

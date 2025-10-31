@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
     'Empowering small & unorganized businesses with tailored web, app and growth solutions that use the latest UX patterns and lightweight modern tech.',
   phone: '+91 8838598345',
   email: 'reachmodexdigital@gmail.com',
-  whatsapp: '+917013517725',
+  whatsapp: '+918838598345',
   address: {
     city: 'Chennai',
     state: 'Tamil Nadu',

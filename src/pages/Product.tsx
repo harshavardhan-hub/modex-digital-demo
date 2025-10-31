@@ -110,7 +110,7 @@ const Product: React.FC = () => {
             >
               <div className="rounded-2xl overflow-hidden shadow-2xl border border-white/20">
                 <img
-                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=500&fit=crop"
+                  src="https://res.cloudinary.com/drit9nkha/image/upload/v1761921397/unnamed_1_fel5z4.jpg"
                   alt="Product Dashboard Mockup"
                   className="w-full h-auto"
                 />
