@@ -72,9 +72,9 @@ const ProductTeaser: React.FC = () => {
             <div className="relative bg-white rounded-2xl shadow-2xl p-4 border border-neutral-200">
               {/* Dashboard Mockup Image */}
               <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop"
+                src="https://res.cloudinary.com/drit9nkha/image/upload/v1761921397/unnamed_1_fel5z4.jpg"
                 alt="Business Dashboard Preview"
-                className="w-full h-auto rounded-lg"
+                className="w-full max-h-96 object-cover rounded-lg"
               />
 
               {/* Glow Effect */}

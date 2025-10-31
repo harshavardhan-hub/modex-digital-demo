@@ -15,7 +15,7 @@ const WhatWeDo: React.FC = () => {
       problem: "Outdated websites that don't convert visitors into customers",
       approach: 'Modern, responsive design with conversion optimization',
       deliverables: 'Fast, SEO-friendly websites that drive results',
-      image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&h=400&fit=crop',
+      image: 'https://res.cloudinary.com/drit9nkha/image/upload/v1761921841/unnamed_2_tnw8lo.jpg',
     },
     {
       icon: <Smartphone className="w-8 h-8 lg:w-10 lg:h-10 text-accent" />,

@@ -113,7 +113,7 @@ const Hero: React.FC = () => {
             <div className="relative">
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
                 <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+                  src="https://res.cloudinary.com/drit9nkha/image/upload/v1761921398/unnamed_w45tsm.jpg"
                   alt="Digital Solutions Dashboard"
                   className="w-full h-auto object-cover"
                 />
