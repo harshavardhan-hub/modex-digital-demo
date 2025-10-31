@@ -5,6 +5,7 @@ import TypingIndicator from './TypingIndicator';
 import { sendMessageToAI, chatbotConfig } from '../../services/gemini';
 import type { Message } from '../../types/chatbot';
 
+
 const Chatbot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -21,13 +22,16 @@ const Chatbot: React.FC = () => {
   const inputRef = useRef<HTMLInputElement>(null);
   const lastRequestTime = useRef<number>(0);
 
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
+
   useEffect(() => {
     scrollToBottom();
   }, [messages, isTyping]);
+
 
   useEffect(() => {
     if (isOpen && inputRef.current) {
@@ -35,8 +39,10 @@ const Chatbot: React.FC = () => {
     }
   }, [isOpen]);
 
+
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isTyping) return;
+
 
     const now = Date.now();
     const timeSinceLastRequest = now - lastRequestTime.current;
@@ -51,6 +57,7 @@ const Chatbot: React.FC = () => {
       return;
     }
 
+
     const userMessage: Message = {
       id: Date.now().toString(),
       role: 'user',
@@ -58,10 +65,12 @@ const Chatbot: React.FC = () => {
       timestamp: new Date(),
     };
 
+
     setMessages((prev) => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
     lastRequestTime.current = now;
+
 
     try {
       const conversationHistory = messages.map((msg) => ({
@@ -69,10 +78,12 @@ const Chatbot: React.FC = () => {
         content: msg.content,
       }));
 
+
       const aiResponse = await sendMessageToAI(
         userMessage.content,
         conversationHistory
       );
+
 
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -81,11 +92,14 @@ const Chatbot: React.FC = () => {
         timestamp: new Date(),
       };
 
+
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
       console.error('Chatbot Error:', error);
 
+
       let errorMessage = "I'm having trouble connecting right now. ";
+
 
       if (error instanceof Error) {
         if (error.message.includes('API key not configured')) {
@@ -101,7 +115,9 @@ const Chatbot: React.FC = () => {
         }
       }
 
+
       errorMessage += `\n\n📞 You can also reach us:\n${chatbotConfig.contact.phone}\n📧 ${chatbotConfig.contact.email}`;
+
 
       const errorMsg: Message = {
         id: (Date.now() + 1).toString(),
@@ -115,12 +131,14 @@ const Chatbot: React.FC = () => {
     }
   };
 
+
   const handleKeyPress = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
   };
+
 
   return (
     <>
@@ -189,6 +207,7 @@ const Chatbot: React.FC = () => {
           )}
         </AnimatePresence>
 
+
         {/* Pulse animation when closed */}
         {!isOpen && (
           <motion.div
@@ -198,19 +217,23 @@ const Chatbot: React.FC = () => {
           />
         )}
 
-        {/* Label */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="absolute bottom-full mb-3 right-0 whitespace-nowrap pointer-events-none"
-        >
-          <div className="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">
-            Modex Assistant
-          </div>
-          <div className="w-2 h-2 bg-primary absolute -bottom-1 right-3 rotate-45" />
-        </motion.div>
+
+        {/* Label - ONLY SHOW WHEN CLOSED */}
+        {!isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+            className="absolute bottom-full mb-3 right-0 whitespace-nowrap pointer-events-none"
+          >
+            <div className="bg-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-lg">
+              Modex Assistant
+            </div>
+            <div className="w-2 h-2 bg-primary absolute -bottom-1 right-3 rotate-45" />
+          </motion.div>
+        )}
       </motion.button>
+
 
       {/* Chat Window */}
       <AnimatePresence>
@@ -237,6 +260,7 @@ const Chatbot: React.FC = () => {
               </div>
             </div>
 
+
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-neutral-50">
               {messages.map((message) => (
@@ -245,6 +269,7 @@ const Chatbot: React.FC = () => {
               {isTyping && <TypingIndicator />}
               <div ref={messagesEndRef} />
             </div>
+
 
             {/* Input */}
             <div className="p-4 bg-white border-t border-neutral-200">
@@ -289,5 +314,6 @@ const Chatbot: React.FC = () => {
     </>
   );
 };
+
 
 export default Chatbot;
