@@ -32,21 +32,14 @@ const Stats: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Client Logos */}
+        {/* Trusted By Text */}
         <motion.div
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: 0.5 }}
-          className="mt-16"
+          animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
+          className="mt-16 text-center"
         >
-          <p className="text-center text-neutral-400 mb-8">Trusted by leading businesses</p>
-          <div className="flex flex-wrap justify-center items-center gap-8 opacity-50">
-            {['Disha Constructions', 'SSS Constructions', 'Rotary Club'].map((client, i) => (
-              <div key={i} className="px-6 py-3 bg-white/10 rounded-lg text-white/70">
-                {client}
-              </div>
-            ))}
-          </div>
+          <p className="text-neutral-300 text-lg">Trusted by Leading Businesses</p>
         </motion.div>
       </Container>
     </section>
