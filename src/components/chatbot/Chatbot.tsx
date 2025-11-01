@@ -302,7 +302,7 @@ const Chatbot: React.FC = () => {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                      d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
                 </motion.button>
