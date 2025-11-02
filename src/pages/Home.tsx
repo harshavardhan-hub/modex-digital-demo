@@ -3,7 +3,7 @@ import Hero from '@/components/home/Hero';
 import ServiceSnapshot from '@/components/home/ServiceSnapshot';
 import Solutions from '@/components/home/Solutions';
 import ProductTeaser from '@/components/home/ProductTeaser';
-import WhatWeDo from '@/components/home/WhatWeDo';
+import OurProcess from '@/components/home/OurProcess'; 
 import Automation from '@/components/home/Automation';
 import Stats from '@/components/home/Stats';
 import CaseStudies from '@/components/home/CaseStudies';
@@ -12,18 +12,18 @@ import Support from '@/components/home/Support';
 
 const Home: React.FC = () => {
   return (
-    <div style={{ width: '100%', overflowX: 'hidden' }}>
+    <>
       <Hero />
       <ServiceSnapshot />
       <Solutions />
       <ProductTeaser />
-      <WhatWeDo />
+      <OurProcess /> 
       <Automation />
       <Stats />
       <CaseStudies />
       <Testimonials />
       <Support />
-    </div>
+    </>
   );
 };
 
