@@ -31,7 +31,7 @@ const Hero: React.FC = () => {
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.1 }}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400 mb-6 sm:mb-8"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-100 to-neutral-200 mb-6 sm:mb-8"
         >
           {SITE_CONFIG.tagline}
         </motion.h1>
