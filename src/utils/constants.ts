@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
     twitter: '#',
     instagram: '#',
   },
-  logo: 'https://www.modexdigital.com/assets/images/3.png',
+  logo: 'https://res.cloudinary.com/drit9nkha/image/upload/v1762358209/3_ij57yp.png',
 };
 
 export const SERVICES = [

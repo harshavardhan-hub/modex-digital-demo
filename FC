@@ -28,6 +28,7 @@ modex-digital/
 │   │   │   ├── Solutions.tsx
 │   │   │   ├── ProductTeaser.tsx
 │   │   │   ├── OurProcess.tsx
+│   │   │   ├── ParticleBackground.tsx
 │   │   │   ├── Automation.tsx
 │   │   │   ├── Stats.tsx
 │   │   │   ├── CaseStudies.tsx

@@ -17,7 +17,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen flex flex-col" style={{ width: '100%', overflowX: 'hidden' }}>
       <Header />
-      <main className="flex-grow pt-16" style={{ width: '100%', overflowX: 'hidden' }}>
+      <main className="flex-grow pt-0" style={{ width: '100%', overflowX: 'hidden' }}>
         {children}
       </main>
       <Footer />

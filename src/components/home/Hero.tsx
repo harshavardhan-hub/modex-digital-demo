@@ -3,137 +3,107 @@ import { motion } from 'framer-motion';
 import { ArrowRight, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { SITE_CONFIG } from '@/utils/constants';
-import { fadeInUp, slideInRight } from '@/utils/animations';
+import { fadeInUp } from '@/utils/animations';
 import Button from '@/components/common/Button';
+import ParticleBackground from './ParticleBackground';
 
 const Hero: React.FC = () => {
   return (
-    <section 
-      className="relative min-h-screen flex items-center bg-gradient-to-br from-primary via-primary to-neutral-900 text-white pt-20"
-      style={{ 
-        width: '100%',
-        minWidth: '100%',
-        margin: 0,
-        padding: 0,
-        boxSizing: 'border-box'
-      }}
-    >
-      {/* Background Pattern */}
-      <div className="absolute inset-0 w-full opacity-5">
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        ></div>
-      </div>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#030712] via-[#0f172a] to-[#1e293b] text-white overflow-hidden">
+      {/* Particle Background */}
+      <ParticleBackground />
 
-      <div 
-        className="relative z-10 w-full px-4 sm:px-6 lg:px-8"
-        style={{ maxWidth: '1280px', margin: '0 auto', boxSizing: 'border-box' }}
-      >
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeInUp}
-            className="text-center lg:text-left"
+      {/* Content */}
+      <div className="relative z-10 w-full px-6 sm:px-8 lg:px-10 py-20 lg:py-24 max-w-7xl mx-auto flex flex-col items-center justify-center text-center">
+        {/* Hero Badge */}
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={fadeInUp}
+          className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/30 text-accent text-sm font-medium backdrop-blur-sm mb-6 sm:mb-8 hover:bg-accent/20 transition-all duration-300"
+        >
+          🚀 Empowering Businesses with AI
+        </motion.div>
+
+        {/* Heading */}
+        <motion.h1
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.1 }}
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-neutral-200 to-neutral-400 mb-6 sm:mb-8"
+        >
+          {SITE_CONFIG.tagline}
+        </motion.h1>
+
+        {/* Description */}
+        <motion.p
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.2 }}
+          className="text-base sm:text-lg md:text-xl text-neutral-300 max-w-3xl mx-auto leading-relaxed mb-10 sm:mb-12"
+        >
+          {SITE_CONFIG.description}
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 mb-14 sm:mb-16"
+        >
+          <Button
+            as={Link}
+            to="/contact"
+            variant="primary"
+            size="md"
+            className="group w-full sm:w-auto bg-accent text-white px-7 py-3 rounded-full text-base font-medium flex items-center justify-center shadow-md hover:scale-[1.03] transition-transform duration-200"
           >
-            <motion.div variants={fadeInUp} className="inline-block mb-4">
-              <span className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs sm:text-sm font-medium">
-                🚀 Trusted by 20+ businesses
-              </span>
-            </motion.div>
+            Get Free Consultation
+            <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={18} />
+          </Button>
 
-            <motion.h1
-              variants={fadeInUp}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6 leading-tight"
-            >
-              {SITE_CONFIG.tagline}
-            </motion.h1>
-
-            <motion.p
-              variants={fadeInUp}
-              className="text-base sm:text-lg lg:text-xl text-neutral-300 mb-6 lg:mb-8 max-w-2xl mx-auto lg:mx-0"
-            >
-              {SITE_CONFIG.description}
-            </motion.p>
-
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center lg:justify-start"
-            >
-              <Button as={Link} to="/contact" variant="primary" size="md" className="group">
-                Get Free Consultation
-                <ArrowRight
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                  size={18}
-                />
-              </Button>
-              <Button
-                as={Link}
-                to="/clients"
-                variant="secondary"
-                size="md"
-                className="group border-white text-white hover:bg-white hover:text-primary"
-              >
-                <PlayCircle className="mr-2" size={18} />
-                See Our Work
-              </Button>
-            </motion.div>
-
-            {/* Stats */}
-            <motion.div
-              variants={fadeInUp}
-              className="mt-8 lg:mt-12 grid grid-cols-3 gap-4 lg:gap-6 max-w-md mx-auto lg:mx-0"
-            >
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent">20+</div>
-                <div className="text-xs sm:text-sm text-neutral-400 mt-1">Clients</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent">3+</div>
-                <div className="text-xs sm:text-sm text-neutral-400 mt-1">Years</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-bold text-accent">10+</div>
-                <div className="text-xs sm:text-sm text-neutral-400 mt-1">Projects</div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Visual - Hero Image */}
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={slideInRight}
-            className="relative hidden lg:block"
+          <Button
+            as={Link}
+            to="/clients"
+            variant="secondary"
+            size="md"
+            className="group w-full sm:w-auto border border-white/50 text-white bg-white/5 backdrop-blur-sm rounded-full px-7 py-3 text-base font-medium flex items-center justify-center hover:bg-white/10 transition-all duration-300"
           >
-            <div className="relative">
-              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-                <img
-                  src="https://res.cloudinary.com/drit9nkha/image/upload/v1761921398/unnamed_w45tsm.jpg"
-                  alt="Digital Solutions Dashboard"
-                  className="w-full h-auto object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-accent2/20 mix-blend-overlay"></div>
-              </div>
+            <PlayCircle className="mr-2" size={18} />
+            See Our Work
+          </Button>
+        </motion.div>
 
-              {/* Floating Elements */}
-              <motion.div
-                animate={{ y: [-10, 10, -10] }}
-                transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-4 -right-4 w-20 h-20 lg:w-24 lg:h-24 bg-accent rounded-full opacity-20 blur-2xl"
-              ></motion.div>
-              <motion.div
-                animate={{ y: [10, -10, 10] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -bottom-4 -left-4 w-24 h-24 lg:w-32 lg:h-32 bg-accent2 rounded-full opacity-20 blur-2xl"
-              ></motion.div>
-            </div>
-          </motion.div>
-        </div>
+        {/* Stats Section */}
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate="visible"
+          transition={{ delay: 0.4 }}
+          className="grid grid-cols-3 gap-4 sm:gap-6 max-w-md sm:max-w-lg mx-auto"
+        >
+          {[
+            { label: 'Clients', value: '20+' },
+            { label: 'Years', value: '3+' },
+            { label: 'Projects', value: '10+' },
+          ].map((stat, i) => (
+            <motion.div
+              key={i}
+              whileHover={{
+                y: -6,
+                boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.25)',
+              }}
+              className="backdrop-blur-sm bg-white/5 rounded-2xl py-5 px-3 sm:px-5 border border-white/10 hover:border-accent/40 transition-all duration-300"
+            >
+              <div className="text-3xl sm:text-4xl font-bold text-accent">{stat.value}</div>
+              <div className="text-xs sm:text-sm text-neutral-400 mt-1">{stat.label}</div>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
 
       {/* Scroll Indicator */}
@@ -141,12 +111,12 @@ const Hero: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 hidden lg:block"
+        className="absolute bottom-12 sm:bottom-8 left-1/2 transform -translate-x-1/2"
       >
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
+          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2 hover:border-accent transition-colors"
         >
           <motion.div className="w-1 h-2 bg-white rounded-full"></motion.div>
         </motion.div>
